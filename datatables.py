@@ -1,8 +1,8 @@
 from flask import Flask ,render_template,request,jsonify
 import sqlite3
 app = Flask(__name__)
-
-db = sqlite3.connect("/Users/min/Downloads/DataTables-1.10.4-trial/hostdb.db",check_same_thread = False)
+db_file = '/Users/min/Downloads/DataTables-1.10.4-trial/hostdb.db'
+db = sqlite3.connect(db_file,check_same_thread = False)
 db.row_factory = sqlite3.Row
 cu = db.cursor()
 
