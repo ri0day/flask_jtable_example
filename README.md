@@ -1,5 +1,6 @@
 # flask_datatables_crud
 an example of jquery datatables with  python flask framework and sqlite
+
 function : search,update,delete,add ,sort,editor
 
 ###how to explore
