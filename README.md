@@ -1,25 +1,10 @@
-# flask_datatables_crud
-an example of jquery datatables with  python flask framework and sqlite
+### just a python demo for juqery jtable
+  
+```
+pip install flask
 
-function : search,update,delete,add ,sort,editor
-
-###how to explore
-```python
- sqlite hostinfo.db <sqlitev2.sql
- pip install flask sqlite
-
- modify the variable db_file in script
-
- python datatables_serverside_process.py 
- or
- python datatables.py
-
+python make_fake_data.py >table.sql
+sqlite3 v3.db <table.sql
+python jtable.py
 ```
 
-```
-mindeMacBook-Pro:flask_datatables_crud min$ tree
-.
-├── README.md
-├── datatables.py (with editor)
-├── datatables_serverside_process.py (no editor)
-```

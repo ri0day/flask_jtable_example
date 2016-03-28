@@ -1,0 +1,67 @@
+<html>
+  <head>
+
+    <link href="{{url_for('static',filename='scripts/jtable/themes/metro/blue/jtable.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url_for('static',filename='scripts/jquery-ui.css')}}" rel="stylesheet" type="text/css" />
+	<script src="{{url_for('static',filename = 'scripts/jquery-1.9.1.min.js')}}" type="text/javascript"></script>
+    <script src="{{ url_for('static',filename = 'scripts/jquery-ui-1.10.0.min.js')}}" type="text/javascript"></script>
+    <script src="{{url_for('static',filename = 'scripts/jtable/jquery.jtable.js')}}" type="text/javascript"></script>
+
+
+
+
+
+  </head>
+  <body>
+	<div id="hostTableContainer"></div>
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+		    //Prepare jTable
+			$('#hostTableContainer').jtable({
+				title: 'Table of host',
+  				paging: true,
+                                pageSize: 10,
+				actions: {
+					listAction: '/listhost',
+					createAction: '/createhost',
+					updateAction: '/updatehost',
+					deleteAction: '/deletehost'
+				},
+				fields: {
+					DT_RowId: {
+						key: true,
+						create: false,
+						edit: false,
+						list: false
+					},
+					ip: {
+						title: 'IP'
+					},
+					os_type: {
+						title: '操作系统'
+					},
+                                        services:{
+                                                title: '运行服务', 
+                                        },
+
+                                        business_dep: {title: '业务板块'},
+                                        service_ports: {title: '开放端口'},
+                                        location: {title: '机器位置'},
+                                        ipmi_address: {title: '远程管理卡IP'},
+                                        business_contact: {title: '业务联系人'},
+                                        tech_contact: {title: '技术联系人'},
+                                        environment: {title: '服务级别'}
+				}
+			});
+
+			//Load person list from server
+			$('#hostTableContainer').jtable('load');
+
+		});
+
+	</script>
+ 
+  </body>
+</html>
